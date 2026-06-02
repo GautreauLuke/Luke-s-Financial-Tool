@@ -1,0 +1,37 @@
+2026.06.01 - Project Updates
+
+Streamlit App Updates (Py)
+  - Created initial Streamlit app entry point
+  - Added page configuration for the main app
+  - Added starter title and sidebar success message
+
+Expense Cost Updates (CSV)
+  - Added ExpenseCosts.csv as the source file for expense data
+  - Created initial expense records with description, due flag, type, debit, credit, active status, and person fields
+  - Added sample monthly expense data for early app testing
+
+Expense Costs Page Updates (Py)
+  - Created Expense Costs page
+  - Loaded ExpenseCosts.csv into a pandas DataFrame
+  - Added editable expense table using Streamlit data editor
+  - Enabled dynamic rows for adding and deleting expense records
+  - Added save button to write edited expense data back to the CSV file
+
+Summary Page Updates (Py)
+  - Created Monthly Cost Summary page
+  - Loaded ExpenseCosts.csv for summary reporting
+  - Cleaned currency-formatted debit values by removing dollar signs and commas
+  - Converted debit values into numeric values for aggregation
+  - Added grouped debit summary by person and expense type
+  - Displayed aggregated expense summary in the app
+
+Test Page Updates (Py)
+  - Added temporary second test page
+  - Added basic page title for navigation testing
+
+Dev Notes
+  - Established the first split between granular editable expense data and aggregated summary views
+  - Identified CSV-backed data editing as the current local persistence approach
+  - Confirmed summary tables should be calculated from the granular expense source instead of manually maintained
+
+############################################################################################

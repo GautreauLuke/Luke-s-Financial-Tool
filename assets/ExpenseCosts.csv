@@ -1,0 +1,58 @@
+Description,Due,Type,Debit,Discover,Credit,Active?,Person
+Unum,Wed,Salary,,,"$2,665.00",Yes,Caitlin
+Unum,,Salary,,,"$2,665.00",Yes,Caitlin
+Community Sign-On,,Salary,,,,No,Luke
+Americo,1,Insurance,$60.11,,,Yes,Luke
+Luke Gas,Sun,Travel,$40.00,,,Yes,Caitlin
+Rev,12,Utilities,$105.00,,,Yes,Caitlin
+Spotify,6,Subscription,$10.88,,,Yes,Caitlin
+Le Chateau,5,Childcare,$850.00,,,Yes,Caitlin
+Discover,Fri,Debt,$150.00,$300.00,,Yes,Caitlin
+Carmax,28,Debt,$312.00,,,Yes,Caitlin
+Trash,1,Utilities,,$29.00,,Yes,Caitlin
+Netflix,,Subscription,,,,No,Caitlin
+AT&T,2,Utilities,$250.00,,,Yes,Caitlin
+MacroFactor,30,Subscription,$13.13,,,Yes,Caitlin
+Splice,,Subscription,,,,No,Caitlin
+Rebble,25,Subscription,$3.00,,,Yes,Caitlin
+Disney+,,Subscription,$0.00,,,No,Caitlin
+Progressive,17,Insurance,$176.00,,,Yes,Caitlin
+Mr Cooper,16,Mortgage,"$1,678.00",,,Yes,Caitlin
+Aqua Finance,16,Insurance,$44.00,,,Yes,Luke
+Alarms LLC,16,Debt,$21.95,,,Yes,Luke
+Dog Food,21,Food,$87.15,,,Yes,Caitlin
+NSO,24,Subscription,$4.35,,,Yes,Caitlin
+Termite Install,,Debt,$113.00,,,Yes,Caitlin
+XBox Game Pass,,Subscription,,,,No,Caitlin
+HOA,1,Mortgage,$42.00,,,Yes,Caitlin
+401(k),,Saving,,,,No,Caitlin
+Active&Fit,13,Subscription,$28.00,,,Yes,Caitlin
+Haircut,1,Other,$50.00,$28.00,,Yes,Caitlin
+Discover (SC),,Debt,,,,No,Caitlin
+Williamson,Fri,Salary,,,"$1,400.00",Yes,Caitlin
+Williamson,,Salary,,,"$1,400.00",Yes,Caitlin
+Womans,,Debt,,,,No,Caitlin
+Water,15,Utilities,$100.00,,,Yes,Caitlin
+Dance 1 of 2,1,Dance,$250.00,,,Yes,Caitlin
+Dance 2 of 2,15,Dance,$250.00,,,Yes,Caitlin
+Caitlin Gas,Sun,Travel,$30.00,,,Yes,Caitlin
+Cait Car,2,Debt,$470.00,,,Yes,Caitlin
+Atmos (Gas),13,Utilities,$35.00,,,Yes,Caitlin
+Demco,18,Utilities,$180.00,,,Yes,Caitlin
+State Farm,2,Insurance,$150.94,,,Yes,Caitlin
+Groceries,Fri,Food,$220.00,,,Yes,Caitlin
+Lunch,,,,,,No,Caitlin
+Ripple Milk,,Food,,,,No,Caitlin
+Jazz Piano School,,Subscription,,,,No,Caitlin
+Disney Trip,,Debt,,,,No,Caitlin
+Moises,3,Subscription,,,,Yes,Caitlin
+Ganon Surgery,,Debt,,,,No,Caitlin
+Overcast,,Salary,,,,No,Luke
+Belmont,12,Debt,$104.00,,,Yes,Caitlin
+DCFSA Reimbursement,29,Salary,,,$613.00,Yes,Caitlin
+Oschner,16,Debt,$140.00,,,Yes,Luke
+STA/SJP,16,Childcare,$800.00,,,Yes,Caitlin
+Walmart+,15,Subscription,$15.00,,,Yes,Caitlin
+Flex Deposit,Fri,Other,$100.00,,,Yes,Caitlin
+Savings Deposit,FRI,Saving,150,,,yes,Caitlin
+ChatGPT,7,Subscription,21.9,,,yes,Caitlin
