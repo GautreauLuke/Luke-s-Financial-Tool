@@ -1,5 +1,5 @@
+## IMPORT LIBRARIES
 import streamlit as st
-
 import pandas as pd
 
 st.set_page_config(
@@ -11,7 +11,7 @@ st.title("Welcome to your expense summary.")
 
 st.sidebar.success("[text]")
 
-expense_costs = pd.read_csv(r"C:\Users\pc\Documents\GitHub\Luke's Financial Tool\assets\ExpenseCosts.csv")
+expense_costs = pd.read_csv("assets\ExpenseCosts.csv")
 
 ## expense_costs['Debit'] = expense_costs['Debit'].str.replace(["$" , ","],"")      -- For some reason, broken. Individual replaces below work just fine.
 
