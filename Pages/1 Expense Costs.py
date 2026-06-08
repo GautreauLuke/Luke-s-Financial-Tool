@@ -7,9 +7,9 @@ st.set_page_config(
     layout = "wide"
     )
 
-st.title("Welcome to your expense costs.")
+st.title("Here are your expense costs.")
+st.title("")
 
-st.sidebar.success("[text]")
 
 expense_costs = pd.read_csv("assets\ExpenseCosts.csv")
 

@@ -73,3 +73,79 @@ Dev Notes
   - Confirmed summary tables should be calculated from the granular expense source instead of manually maintained
 
 ############################################################################################
+
+2026.06.07 - Analysis Page Updates
+
+Analysis Page Updates (Py)
+  - Created initial Analysis page for the Streamlit finance app
+  - Added Plotly Express for chart visualizations
+  - Loaded ExpenseCosts.csv from the project-relative assets folder
+  - Cleaned currency-formatted credit and debit values
+    - Removed comma formatting
+    - Removed dollar signs
+    - Converted Credit and Debit values to float
+  - Added income account pie chart using Credit values grouped by Description
+  - Added expense account pie chart using Debit values grouped by Person
+  - Added expense type pie chart using Debit values grouped by Type
+  - Added three-column layout for horizontally aligned pie charts
+  - Added grouped dataframes below visualizations
+    - Added income summary grouped by Description
+    - Added expense summary grouped by Person
+    - Added expense summary grouped by Type
+  - Added filtering to remove zero-value rows from grouped summaries
+
+Expense Costs Page Updates (Py)
+  - Replaced absolute local CSV path with project-relative assets path
+  - Improved portability of expense data loading
+
+Summary Page Updates (Py)
+  - Replaced absolute local CSV path with project-relative assets path
+  - Updated summary page to use the same data loading approach as other pages
+
+Dev Notes
+  - Confirmed Plotly charts require numeric values before rendering correctly
+  - Fixed blank pie chart issue caused by currency-formatted text values
+  - Confirmed st.columns works for horizontal Streamlit dashboard layout
+  - Identified repeated Credit and Debit cleanup logic as a future refactor candidate
+  - Noted hardcoded chart widths may need future adjustment for responsive layout
+
+############################################################################################
+
+
+2026.06.01 - Project Updates
+
+Streamlit App Updates (Py)
+  - Created initial Streamlit app entry point
+  - Added page configuration for the main app
+  - Added starter title and sidebar success message
+
+Expense Cost Updates (CSV)
+  - Added ExpenseCosts.csv as the source file for expense data
+  - Created initial expense records with description, due flag, type, debit, credit, active status, and person fields
+  - Added sample monthly expense data for early app testing
+
+Expense Costs Page Updates (Py)
+  - Created Expense Costs page
+  - Loaded ExpenseCosts.csv into a pandas DataFrame
+  - Added editable expense table using Streamlit data editor
+  - Enabled dynamic rows for adding and deleting expense records
+  - Added save button to write edited expense data back to the CSV file
+
+Summary Page Updates (Py)
+  - Created Monthly Cost Summary page
+  - Loaded ExpenseCosts.csv for summary reporting
+  - Cleaned currency-formatted debit values by removing dollar signs and commas
+  - Converted debit values into numeric values for aggregation
+  - Added grouped debit summary by person and expense type
+  - Displayed aggregated expense summary in the app
+
+Test Page Updates (Py)
+  - Added temporary second test page
+  - Added basic page title for navigation testing
+
+Dev Notes
+  - Established the first split between granular editable expense data and aggregated summary views
+  - Identified CSV-backed data editing as the current local persistence approach
+  - Confirmed summary tables should be calculated from the granular expense source instead of manually maintained
+
+############################################################################################
