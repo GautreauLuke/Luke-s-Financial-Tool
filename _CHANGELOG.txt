@@ -1,3 +1,27 @@
+2026.06.08 - Analysis Tab Updates
+
+Expense Costs Page Updates (Py)
+  - Updated Save changes action to write edited expense data to the project-relative assets folder
+  - Removed hardcoded absolute local CSV save path
+  - Improved app portability across local project folders
+
+Analysis Page Updates (Py)
+  - Replaced expander-based analysis layout with tab-based layout
+  - Added Breakdown and Details tabs
+  - Moved grouped summary dataframes into the Breakdown tab
+    - Kept income summary grouped by Description
+    - Kept expense summary grouped by Person
+    - Kept expense summary grouped by Type
+  - Moved Type detail selector into the Details tab
+  - Kept filtered transaction detail dataframe based on selected Type
+  - Commented out previous expander-based Breakdown and Details layout for reference
+
+Dev Notes
+  - Shifted detailed analysis navigation from expanders to tabs for cleaner page organization
+  - Continued replacing local-machine-specific paths with project-relative paths
+
+############################################################################################
+
 2026.06.07 - Analysis Page Updates
 
 Analysis Page Updates (Py)

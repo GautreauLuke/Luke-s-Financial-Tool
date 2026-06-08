@@ -9,7 +9,7 @@ Spotify,6,Subscription,$10.88,,,Yes,Caitlin
 Le Chateau,5,Childcare,$850.00,,,Yes,Caitlin
 Discover,Fri,Debt,$150.00,$300.00,,Yes,Caitlin
 Carmax,28,Debt,$312.00,,,Yes,Caitlin
-Trash,1,Utilities,,$29.00,,Yes,Caitlin
+Trash,1,Utilities,29,,,Yes,Caitlin
 Netflix,,Subscription,,,,No,Caitlin
 AT&T,2,Utilities,$250.00,,,Yes,Caitlin
 MacroFactor,30,Subscription,$13.13,,,Yes,Caitlin
@@ -27,7 +27,7 @@ XBox Game Pass,,Subscription,,,,No,Caitlin
 HOA,1,Mortgage,$42.00,,,Yes,Caitlin
 401(k),,Saving,,,,No,Caitlin
 Active&Fit,13,Subscription,$28.00,,,Yes,Caitlin
-Haircut,1,Other,$50.00,$28.00,,Yes,Caitlin
+Haircut,1,Other,$50.00,,,Yes,Caitlin
 Discover (SC),,Debt,,,,No,Caitlin
 Williamson,Fri,Salary,,,"$1,400.00",Yes,Caitlin
 Williamson,,Salary,,,"$1,400.00",Yes,Caitlin

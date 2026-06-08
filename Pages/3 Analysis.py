@@ -77,7 +77,14 @@ expense_account_desc = expense_account_desc.groupby('Person')['Debit'].sum().dro
 expense_type_desc = expense_costs[expense_costs['Debit'] != 0]
 expense_type_desc = expense_type_desc.groupby('Type')['Debit'].sum().dropna().sort_values(ascending = False)
 
-with st.expander("Breakdown"):
+
+##
+## DETAILED ANALYSIS
+##
+
+detail_tab1, detail_tab2 = st.tabs(['Breakdown', 'Details'])
+
+with detail_tab1:
     data_col1, data_col2, data_col3 = st.columns(3)
 
     with data_col1:
@@ -86,8 +93,22 @@ with st.expander("Breakdown"):
         st.dataframe(expense_account_desc)
     with data_col3:
         st.dataframe(expense_type_desc)
-
-with st.expander("Details"):
+with detail_tab2:
     detail = st.selectbox("Detail",
                  expense_costs['Type'].drop_duplicates().dropna().sort_values())
     st.dataframe(expense_costs[expense_costs['Type'] == detail].reset_index(drop = True))
+
+# with st.expander("Breakdown"):
+#     data_col1, data_col2, data_col3 = st.columns(3)
+
+#     with data_col1:
+#         st.dataframe(income_account_desc)
+#     with data_col2:
+#         st.dataframe(expense_account_desc)
+#     with data_col3:
+#         st.dataframe(expense_type_desc)
+
+# with st.expander("Details"):
+#     detail = st.selectbox("Detail",
+#                  expense_costs['Type'].drop_duplicates().dropna().sort_values())
+#     st.dataframe(expense_costs[expense_costs['Type'] == detail].reset_index(drop = True))

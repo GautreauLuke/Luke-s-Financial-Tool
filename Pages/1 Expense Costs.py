@@ -34,5 +34,5 @@ dynamic_table = st.data_editor(
     )
 
 if st.button("Save changes"):
-    dynamic_table.to_csv(r"C:\Users\pc\Documents\GitHub\Luke's Financial Tool\assets\ExpenseCosts.csv", index = False)
+    dynamic_table.to_csv("assets\ExpenseCosts.csv", index = False)
     st.success("Changes saved!")
