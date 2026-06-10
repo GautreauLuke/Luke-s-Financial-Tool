@@ -1,3 +1,51 @@
+2026.06.09 - Summary, Analysis, and Feature Testing Updates
+
+Summary Page Updates (Py)
+  - Added Debit cleanup before numeric conversion
+  - Removed comma formatting from Debit values
+  - Removed dollar signs from Debit values
+  - Replaced null Debit values with 0
+  - Added Credit cleanup before numeric conversion
+  - Removed comma formatting from Credit values
+  - Removed dollar signs from Credit values
+  - Replaced null Credit values with 0
+  - Added Discover cleanup before numeric use
+  - Removed comma formatting from Discover values
+  - Removed dollar signs from Discover values
+  - Replaced null Discover values with 0
+
+Analysis Page Updates (Py)
+  - Added null handling for Debit, Credit, and Discover values
+  - Added Discover column cleanup to match the existing Debit and Credit cleanup pattern
+  - Refactored label column creation into an indexed column list
+  - Created label_cols from st.columns()
+  - Assigned label_col1, label_col2, and label_col3 from label_cols indexes
+  - Began refactoring pie chart column creation into an indexed column list
+  - Created pie_cols from st.columns()
+  - Assigned pie_col1 from pie_cols index
+
+Feature Testing Page Updates (Py)
+  - Renamed the test page into a sandbox environment
+  - Loaded ExpenseCosts.csv into the feature testing page
+  - Added Debit, Credit, and Discover cleanup logic
+  - Removed comma formatting from currency fields
+  - Removed dollar signs from currency fields
+  - Replaced null currency values with 0
+  - Converted Debit and Credit values to float
+  - Created budget field using Credit minus Debit
+  - Displayed cleaned expense_costs dataframe for testing
+  - Created Person-level budget summary dataframe
+  - Selected Person and budget columns
+  - Removed null Person rows
+  - Grouped budget totals by Person
+  - Displayed grouped budget dataframe for validation
+
+Dev Notes
+  - Continued standardizing currency cleanup across Summary, Analysis, and Feature Testing pages
+  - Used the feature testing page as a sandbox for validating the budget summary dataframe before moving logic into the main app pages
+
+############################################################################################
+
 2026.06.08 - Analysis Tab Updates
 
 Expense Costs Page Updates (Py)

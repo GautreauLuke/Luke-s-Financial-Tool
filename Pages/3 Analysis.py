@@ -12,10 +12,15 @@ st.title("")
 ##
 expense_costs = pd.read_csv("assets\ExpenseCosts.csv")
 
-expense_costs['Credit'] = expense_costs['Credit'].str.replace("," , "")
-expense_costs['Credit'] = expense_costs['Credit'].str.replace("$" , "")
 expense_costs['Debit'] = expense_costs['Debit'].str.replace("," , "")
 expense_costs['Debit'] = expense_costs['Debit'].str.replace("$" , "")
+expense_costs['Debit'] = expense_costs['Debit'].fillna(0)
+expense_costs['Credit'] = expense_costs['Credit'].str.replace("," , "")
+expense_costs['Credit'] = expense_costs['Credit'].str.replace("$" , "")
+expense_costs['Credit'] = expense_costs['Credit'].fillna(0)
+expense_costs['Discover'] = expense_costs['Discover'].str.replace("," , "")
+expense_costs['Discover'] = expense_costs['Discover'].str.replace("$" , "")
+expense_costs['Discover'] = expense_costs['Discover'].fillna(0)
 
 expense_costs['Credit'] = expense_costs['Credit'].astype(float)
 expense_costs['Debit'] = expense_costs['Debit'].astype(float)
@@ -24,8 +29,14 @@ expense_costs['Debit'] = expense_costs['Debit'].astype(float)
 ## DATA VISUALIZATION
 ##
 
-label_col1, label_col2, label_col3 = st.columns(3,
-                                                width = 'stretch')
+# LABEL COLUMNS
+label_cols = st.columns(3,
+                        width = 'stretch')
+
+label_col1 = label_cols[0]
+label_col2 = label_cols[1]
+label_col3 = label_cols[2]
+
 with label_col1:
     st.write("Income by Account")
 with label_col2:
@@ -33,9 +44,13 @@ with label_col2:
 with label_col3:
     st.write("Expenses by Category")
 
+# PIE CHART COLUMNS
+pie_cols = st.columns(3,
+                      width = 'stretch')
 
-pie_col1, pie_col2, pie_col3 = st.columns(3,
-                                          width = 'stretch')
+pie_col1 = pie_cols[0]
+pie_col2 = pie_cols[1]
+pie_col3 = pie_cols[2]
 
 income_account = px.pie(expense_costs,
                    values = 'Credit',
@@ -97,18 +112,3 @@ with detail_tab2:
     detail = st.selectbox("Detail",
                  expense_costs['Type'].drop_duplicates().dropna().sort_values())
     st.dataframe(expense_costs[expense_costs['Type'] == detail].reset_index(drop = True))
-
-# with st.expander("Breakdown"):
-#     data_col1, data_col2, data_col3 = st.columns(3)
-
-#     with data_col1:
-#         st.dataframe(income_account_desc)
-#     with data_col2:
-#         st.dataframe(expense_account_desc)
-#     with data_col3:
-#         st.dataframe(expense_type_desc)
-
-# with st.expander("Details"):
-#     detail = st.selectbox("Detail",
-#                  expense_costs['Type'].drop_duplicates().dropna().sort_values())
-#     st.dataframe(expense_costs[expense_costs['Type'] == detail].reset_index(drop = True))
