@@ -2,10 +2,12 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+from datetime import datetime
 
 
 st.set_page_config("[Feature Testing Environment]")
 st.title("Sandbox")
+st.write(datetime.now().strftime("%H:%M:%S"))
 
 # --- IMPORT EXPENSES
 
@@ -28,7 +30,7 @@ expense_costs['Discover'] = expense_costs['Discover'].astype(float)
 
 # --- MONTHLY EXPESE CALCULATIONS
 
-monthly_costs = expense_costs
+monthly_costs = expense_costs.copy()
 
 weekly = monthly_costs['Due'].astype('string').str.len().eq(3).fillna(False)
 monthly_costs.loc[weekly, 'Debit'] = monthly_costs.loc[weekly, 'Debit'] * 4
@@ -38,19 +40,25 @@ monthly_costs.loc[salary, 'Credit'] = monthly_costs.loc[salary, 'Credit'] * 2
 
 monthly_costs = monthly_costs.dropna(subset = ['Due'])
 
-st.dataframe(monthly_costs)
+st.dataframe(monthly_costs.set_index('Description'))
 
 
 monthly_costs['budget'] = monthly_costs['Credit'] - monthly_costs['Debit']
 
-st.write("Monthly budget")
+    ### Add Combined person
+#combined_budget = monthly_costs.groupby("Person", as_index = False)["budget"].sum()
+
+
+st.write("Monthly Budget Remainders")
 st.write("")
 
 
-budget = monthly_costs[['Person', 'budget']].dropna()
-budget = budget.groupby('Person')['budget'].sum()
 
-st.dataframe(budget)
+budget = monthly_costs[['Person', 'budget']].dropna()
+budget = budget.groupby('Person', as_index=False)['budget'].sum()
+budget.loc[len(budget)] = ["Luke + Caitlin", budget['budget'].sum()]
+
+st.dataframe(budget.set_index('Person'))
 
 
 

@@ -1,3 +1,46 @@
+2026.06.28 - Analysis and Sandbox Updates
+
+Analysis Page Updates (Py)
+  - Added monthly budget remainder calculation workflow
+  - Created monthly_costs copy to preserve the original expense_costs dataframe
+  - Added weekly debit adjustment based on Due field length
+    - Multiplied weekly debit values by 4 for monthly expense estimates
+  - Added salary credit adjustment based on Due field length
+    - Multiplied salary credit values by 2 for monthly income estimates
+  - Dropped rows with missing Due values before monthly budget calculations
+  - Added budget field using Credit minus Debit
+  - Created grouped budget remainder dataframe by Person
+  - Added Luke + Caitlin combined subtotal line
+  - Updated budget dataframe display to use Person as the index
+  - Updated detail view table to use Description as the index
+  - Filtered income pie chart to exclude zero and near-zero Credit values
+  - Added custom color mapping for income sources
+  - Added chart/table split layout for each analysis section
+    - Income by Source
+    - Expenses by Account
+    - Expenses by Category
+  - Added grouped summary tables beside each pie chart
+  - Sorted grouped summary tables in descending value order
+  - Disabled legends on pie charts to reduce visual clutter
+
+Sandbox Updates (Py)
+  - Added datetime import for feature testing
+  - Added current time display to confirm app reruns
+  - Updated monthly_costs assignment to use expense_costs.copy()
+  - Updated monthly_costs dataframe display to use Description as the index
+  - Reworked monthly budget remainder logic to match Analysis page structure
+  - Updated grouped budget calculation to use as_index=False
+  - Added Luke + Caitlin combined subtotal line
+  - Updated budget dataframe display to use Person as the index
+
+Dev Notes
+  - Continued separating original imported data from calculated monthly data
+  - Identified copy() as the safer approach before modifying debit and credit values
+  - Improved readability of summary outputs by setting meaningful dataframe indexes
+  - Continued moving chart sections toward a chart-plus-table dashboard layout
+
+############################################################################################
+
 2026.06.09 - Summary, Analysis, and Feature Testing Updates
 
 Summary Page Updates (Py)
