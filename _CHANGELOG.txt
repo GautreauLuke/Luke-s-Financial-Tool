@@ -1,3 +1,23 @@
+2026.07.01 - Analysis Page Updates
+
+Analysis Page Updates (Py)
+  - Updated pie chart and table column layouts to align content at the top
+    - Applied vertical_alignment = "top" to income account chart/table columns
+    - Applied vertical_alignment = "top" to expense account chart/table columns
+    - Applied vertical_alignment = "top" to expense type chart/table columns
+  - Commented out the previous Detailed Analysis tab layout
+    - Preserved Breakdown and Details tab code for later reference
+    - Preserved grouped breakdown dataframe displays
+    - Preserved Type-based detail filter logic
+  - Moved the Detail selectbox and filtered dataframe outside of the tab structure
+  - Kept the detail dataframe filtered by Type and indexed by Description
+
+Dev Notes
+  - Simplified the Detailed Analysis section while troubleshooting tab behavior
+  - Identified that the previous tabbed layout may be reintroduced after the Details view is stabilized
+
+############################################################################################
+
 2026.06.28 - Analysis and Sandbox Updates
 
 Analysis Page Updates (Py)

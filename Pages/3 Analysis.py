@@ -4,8 +4,7 @@ import pandas as pd
 import plotly.express as px
 
 st.title("Here's a breakdown of your incomes and expenses.")
-#st.title("")
-
+st.write("")
 
 ##
 ## IMPORT ANALYSIS DATA
@@ -58,6 +57,7 @@ budget.loc[len(budget)] = ["Luke + Caitlin", budget['budget'].sum()]
 
 st.dataframe(budget.set_index('Person'))
 
+st.write("")
 
 
 ##
@@ -117,7 +117,9 @@ with pie_col1:
     st.write("")
     st.write("")
     
-    pie_part1, table_part1 = st.columns(2)
+    pie_part1, table_part1 = st.columns(2,
+                                        vertical_alignment = "top"
+                                        )
 
     with pie_part1:
         st.plotly_chart(income_account)
@@ -131,7 +133,9 @@ with pie_col2:
     st.write("")
     st.write("")
 
-    pie_part2, table_part2 = st.columns(2)
+    pie_part2, table_part2 = st.columns(2,
+                                        vertical_alignment = "top"
+                                        )
 
     with pie_part2:
         st.plotly_chart(expense_account)
@@ -145,7 +149,9 @@ with pie_col3:
     st.write("")
     st.write("")
 
-    pie_part3, table_part3 = st.columns(2)
+    pie_part3, table_part3 = st.columns(2,
+                                        vertical_alignment = "top"
+                                        )
 
     with pie_part3:  
         st.plotly_chart(expense_type)
@@ -153,6 +159,8 @@ with pie_col3:
         expense_type_desc = expense_costs[expense_costs['Debit'] != 0]
         expense_type_desc = expense_type_desc.groupby('Type')['Debit'].sum().dropna().sort_values(ascending = False)
         st.dataframe(expense_type_desc)  
+
+st.write("")
 
 
 ##
@@ -174,18 +182,23 @@ expense_type_desc = expense_type_desc.groupby('Type')['Debit'].sum().dropna().so
 ## DETAILED ANALYSIS
 ##
 
-detail_tab1, detail_tab2 = st.tabs(['Breakdown', 'Details'])
+# detail_tab1, detail_tab2 = st.tabs(['Breakdown', 'Details'])
 
-with detail_tab1:
-    data_col1, data_col2, data_col3 = st.columns(3)
+# with detail_tab1:
+#     data_col1, data_col2, data_col3 = st.columns(3)
 
-    with data_col1:
-        st.dataframe(income_account_desc)
-    with data_col2:
-        st.dataframe(expense_account_desc)
-    with data_col3:
-        st.dataframe(expense_type_desc)
-with detail_tab2:
-    detail = st.selectbox("Detail",
-                 expense_costs['Type'].drop_duplicates().dropna().sort_values())
-    st.dataframe(expense_costs[expense_costs['Type'] == detail].set_index('Description'))
+#     with data_col1:
+#         st.dataframe(income_account_desc)
+#     with data_col2:
+#         st.dataframe(expense_account_desc)
+#     with data_col3:
+#         st.dataframe(expense_type_desc)
+# with detail_tab2:
+#     detail = st.selectbox("Detail",
+#                  expense_costs['Type'].drop_duplicates().dropna().sort_values())
+#     st.dataframe(expense_costs[expense_costs['Type'] == detail].set_index('Description'))
+
+
+detail = st.selectbox("Detail",
+                    expense_costs['Type'].drop_duplicates().dropna().sort_values())
+st.dataframe(expense_costs[expense_costs['Type'] == detail].set_index('Description'))
