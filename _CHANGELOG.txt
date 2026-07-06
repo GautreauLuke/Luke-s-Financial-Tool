@@ -1,3 +1,38 @@
+2026.07.05 - App Updates
+
+Data Updates
+
+- Updated inactive Caitlin Lunch record from blank type to Other
+- Cleaned category handling for inactive budget rows
+
+Monthly Cost Summary Updates
+
+- Added Plotly Express import for charting
+- Added two-column layout for table and sunburst sections
+- Added sunburst chart grouped by Person, Type, and Description
+- Applied Type-based coloring to the summary sunburst chart
+- Set sunburst chart height to improve readability
+- Moved grouped Person/Type expense table into the left column
+- Moved sunburst chart into the right column
+
+Analysis Updates
+
+- Added bordered dev-space container for layout testing
+- Added placeholder person cards for Luke and Caitlin
+- Added Totals placeholder section for future summary metrics
+- Added sunburst chart grouped by Person, Type, and Description
+- Increased Analysis sunburst chart height for improved visibility
+- Reorganized feature test archive placement
+- Removed duplicate spacer/title block before archived test layout section
+
+Dev Notes
+
+- Began testing dashboard-style card layout for person-level budget summaries
+- Explored sunburst chart structure as a companion or replacement for category pie charts
+- Identified that Person as the top sunburst parent creates a cleaner hierarchy for two-person expense analysis
+
+############################################################################################
+
 2026.07.01 - Analysis Page Updates
 
 Analysis Page Updates (Py)

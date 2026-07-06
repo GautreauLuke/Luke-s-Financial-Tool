@@ -28,6 +28,49 @@ expense_costs['Debit'] = expense_costs['Debit'].astype(float)
 expense_costs['Discover'] = expense_costs['Discover'].astype(float)
 
 
+#######################################################################################################################################################################################
+## --- DEV SPACE
+
+analysis_container = st.container(border = True)
+
+with analysis_container:
+    p_cards, t_cards = st.columns(2, border = False)
+    with p_cards:
+        luke_card = st.container(border=True,vertical_alignment="center")
+        with luke_card:
+            st.subheader("Luke")
+        caitlin_card = st.container(border=True,vertical_alignment="center")
+        with caitlin_card:
+            st.subheader("Caitlin")
+    with t_cards:
+        st.subheader("Totals")
+
+
+
+sunburst_expenses = px.sunburst(
+    expense_costs,
+    path=['Person','Type','Description'],
+    values = 'Debit'
+)
+
+sunburst_expenses.update_layout(height = 900)
+
+st.plotly_chart(sunburst_expenses, use_container_width=True)
+
+
+#######################################################################################################################################################################################
+
+st.title("")
+st.title("")
+st.title("")
+st.title("")
+st.title("")
+st.title("Feature test archive")
+st.title("")
+
+
+
+
 # --- MONTHLY EXPESE CALCULATIONS
 
 monthly_costs = expense_costs.copy()
@@ -78,24 +121,8 @@ st.dataframe(budget_ann)
 st.dataframe(monthly_costs_ann)
 
 
-
-
-
-
-
-
-
-
-
-
 st.title("")
 st.title("")
-st.title("")
-st.title("")
-st.title("")
-st.title("Feature test archive")
-st.title("")
-
 
 
 label_cols = st.columns(3)
